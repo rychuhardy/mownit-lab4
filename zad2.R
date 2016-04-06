@@ -4,14 +4,15 @@ library(ConsPlan)
 generate_img <- function(N, delta=0.5) # Generates an NxN binary image
                                        # with density of black points equal to delta
 {
-  m <- rep(1, N^2) # Vectore of ones
-  x <- sample(1:(N^2), delta*N^2) # Pick random values to whiten
-  m[x] <- 0 # Whiten chosen values
+  m <- rep(0, N^2) # Vector of zeros
+  x <- sample(1:(N^2), delta*N^2) # Pick random values to blacken
+  m[x] <- 1 # Blacken chosen values
   
   m <- matrix(m, ncol=N) # Create matrix from vector
-  image(m, axes = FALSE, col=grey(seq(0,1))) # Display generated image
+  image(m, axes = FALSE, col=grey(seq(1,0))) # Display generated image
   return(m)
 }
+
 
 allsame_cost <- function(X) # Returns the sum of numbers of neighbours
                             # with different color for each pixel

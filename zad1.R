@@ -1,8 +1,7 @@
 library(foreach)
-library(GenSA)
 
 tsp_sa <- function(max_iter, in_iter, points, temp,
-                   lowest_temp=0, consecutive=false)# Solve tsp problem with simulated annealing
+                   lowest_temp=0, consecutive=FALSE)# Solve tsp problem with simulated annealing
                                                     # temp is initial temperature
                                                     # Points is data_frame generated with generate_data
                                                     # in_iter is number of iterations for fixed temperature
